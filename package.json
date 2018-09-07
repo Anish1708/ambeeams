@@ -1,0 +1,25 @@
+{
+  "name": "ambeeams",
+  "version": "1.0.0",
+  "description": "Server for logging PM data",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "author": "Anish Shetty",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "bootstrap": "^4.1.3",
+    "cors": "^2.8.4",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "fs": "0.0.1-security",
+    "jquery": "^3.3.1",
+    "morgan": "^1.9.0",
+    "nodemon": "^1.18.4",
+    "path": "^0.12.7",
+    "request": "^2.88.0"
+  }
+}
