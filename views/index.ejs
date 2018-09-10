@@ -8,13 +8,14 @@
   <body>
     <div id="container" style="min-width: 910px; height: 400px; margin: 0 auto">
     <h1>Ambee Air monitoring station</h1>
-    <%= console.log(JSON.stringify(data)) %>
-    <% for (var i = 0; i < 99; i++) { %>
-        <ul>
-            <li><% data[i].pm_level%></li>
-            <li><% data[i].added_at%></li>
-        </ul>
-    <%}%>
+    <p>Do not refesh the page will load data every 10-15 seconds.</p>
+    <p>PM 2.5 READING: <%=data.pm_level %></p>
+    <p>RECORDED AT: <%= data.added_at %></p>
     </div>
   </body>
+  <script>
+      setInterval(function(){
+          location.reload();
+      }, 20000);
+  </script>
 </html>

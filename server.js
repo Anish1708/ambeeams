@@ -52,8 +52,7 @@ app.get('/ambee', function(req, res) {
         if (err) throw err;
         const size = data.length;
         const i = size - 2;
-        console.log(size, i)
-        res.send(data[i]);
+        res.render('index', {data : data[i]});
     });
 })
 
