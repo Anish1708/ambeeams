@@ -40,12 +40,19 @@ app.get('/ambee', function(req, res) {
     let queryData = req.query.d;
     let currentTime = moment().utcOffset(330).format();
     const data = new PollutionData();
+    let dataView = [];
     data.pm_level = queryData;
     data.added_at = currentTime;
     console.log(`DATA ${queryData} saved at ${currentTime}`);
     data.save(function(err) {
         if (err) throw err;
         console.log(`DATA ${queryData} saved at ${currentTime}`);
-    })
+    });
+    PollutionData.find({}, function(err, data){
+        if (err) throw err;
+        const size = data.length;
+        let i = size - 1;
+        res.send(data[i]);
+    });
 })
 
