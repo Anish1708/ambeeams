@@ -43,9 +43,9 @@ app.get('/ambee', function(req, res) {
     data.pm_level = queryData;
     data.added_at = currentTime;
     console.log(`DATA ${queryData} saved at ${currentTime}`);
-    // data.save(function(err) {
-    //     if (err) throw err;
-    //     console.log(`DATA ${queryData} saved at ${currentTime}`);
-    // })
+    data.save(function(err) {
+        if (err) throw err;
+        console.log(`DATA ${queryData} saved at ${currentTime}`);
+    })
 })
 
