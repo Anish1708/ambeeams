@@ -38,7 +38,7 @@ mongoose.connection.on('connected', function() {
 
 app.get('/ambee', function(req, res) {
     let queryData = req.query.d;
-    let currentTime = moment().format();
+    let currentTime = moment().utcOffset('+5:30').format();
     const data = new PollutionData();
     data.pm_level = queryData;
     data.added_at = currentTime;
